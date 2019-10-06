@@ -1,5 +1,6 @@
 /*********************************************************************
   Author:        Dana Vrajitoru, IUSB, CS
+                 Brandi McWilliams
   Class:         C243 Data Structures
   File name:     ListIterator.cc
   Last updated:  September 3, 2019
@@ -104,7 +105,7 @@ ListIterator ListIterator::min()
     if (!current) //if current is  NULL
     return current;
     
-    while(current) //increment temp while current is not NULL
+    while(temp) //increment temp while current is not NULL
     {
       if(*temp < *smallerNumber) //compare the datum 
 	  
@@ -127,10 +128,11 @@ ListIterator &ListIterator::moveForward(int steps)
     // or if NULL is reached.
     for (int i=0; i<steps;i++)
     {
-      current=current->next;
-
       if(!current)
 	return *this;
+      
+      current=current->next;
+
     }
 
 
